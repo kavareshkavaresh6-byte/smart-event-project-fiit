@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+    min-height: 100vh;
+}
+
+/* Page Title */
+h1 {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 25px;
+    color: #4f46e5;
+    font-size: 42px;
+}
+
+/* Event Details */
+.booking-card {
+    width: 650px;
+    max-width: 80%;
+    margin: 0 auto 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.booking-card h2 {
+    color: #6d28d9;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.booking-card p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.booking-card strong {
+    color: #4f46e5;
+}
+
+/* Form */
+form {
+    width: 600px;
+    max-width: 80%;
+    margin: 0 auto 50px;
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #3730a3;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 2px solid #c7d2fe;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.2);
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #4f46e5, #9333ea);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .booking-card,
+    form {
+        width: auto;
+        max-width: 80%;
+    }
+}

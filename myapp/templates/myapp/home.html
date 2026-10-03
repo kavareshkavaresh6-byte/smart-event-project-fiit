@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Event Booking</title>
+    <link rel="stylesheet" href="{% static 'myapp/home.css' %}">
+        <link rel="stylesheet" href="{% static 'myapp/navbar.css' %}">
+</head>
+
+<body>
+
+    <h1>Welcome to Smart Event Booking System</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/events/">Events</a>
+        <a href="/login/">Login</a>
+        <a href="/register/">Register</a>
+        <a href="/my-bookings/">My Bookings</a>
+        <a href="/logout/">Logout</a>
+    </nav>
+
+  <div class="home-content">
+
+    <h2>Book Your Favourite Events Easily</h2>
+
+    <p>
+        Discover exciting events and book your seats easily.
+    </p>
+
+    <a href="/events/" class="view-events">View Events</a>
+
+</div>
+<!-- =========================
+     ABOUT SECTION
+========================= -->
+
+<section class="about-section">
+
+    <div class="about-content">
+
+        <span class="about-label">
+            ABOUT OUR SYSTEM
+        </span>
+
+        <h2>
+            Smart Event Booking Made Easy
+        </h2>
+
+        <p>
+            Our Smart Event Booking System helps users
+            discover events, view event details and
+            book their favourite events easily.
+        </p>
+
+        <div class="about-features">
+
+            <div class="about-box">
+                <span class="about-icon">📅</span>
+                <h3>Discover Events</h3>
+                <p>
+                    Explore available events and
+                    view their important details.
+                </p>
+            </div>
+
+            <div class="about-box">
+                <span class="about-icon">🎫</span>
+                <h3>Easy Booking</h3>
+                <p>
+                    Select an event and complete
+                    your booking in a simple way.
+                </p>
+            </div>
+
+            <div class="about-box">
+                <span class="about-icon">👤</span>
+                <h3>My Bookings</h3>
+                <p>
+                    Easily view your booked events
+                    from your account.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COPYRIGHT FOOTER
+========================= -->
+
+<footer class="home-footer">
+
+    <p>
+        © 2026 Smart Event Booking System.
+        All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+    document.querySelector(".view-events").addEventListener("click", function() {
+        alert("Opening Events page...");
+    });
+</script>
+</body>
+</html>

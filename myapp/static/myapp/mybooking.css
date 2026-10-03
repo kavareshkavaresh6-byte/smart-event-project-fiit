@@ -1,0 +1,219 @@
+/* =========================
+   MY BOOKINGS PAGE
+========================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    text-align: center;
+
+    color: #1e293b;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f3ff,
+            #ede9fe,
+            #fce7f3
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+h1 {
+    margin-top: 35px;
+
+    color: #6d28d9;
+
+    font-size: 40px;
+
+    text-shadow:
+        0 4px 12px rgba(109, 40, 217, 0.15);
+}
+
+
+/* =========================
+   BOOKING CARD
+========================= */
+
+.booking-card {
+    width: 430px;
+    max-width: 78%;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    text-align: left;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #faf5ff
+        );
+
+    border: 2px solid #ddd6fe;
+
+    border-left: 7px solid #8b5cf6;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px rgba(124, 58, 237, 0.13);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* Card Hover */
+
+.booking-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #a78bfa;
+
+    box-shadow:
+        0 22px 45px rgba(124, 58, 237, 0.22);
+}
+
+
+/* =========================
+   EVENT NAME
+========================= */
+
+.booking-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    color: #6d28d9;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   BOOKING DETAILS
+========================= */
+
+.booking-card p {
+    margin: 12px 0;
+
+    color: #475569;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   EMPTY BOOKINGS
+========================= */
+
+body > p {
+    width: 400px;
+    max-width: 75%;
+
+    margin: 60px auto;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 2px dashed #c4b5fd;
+
+    border-radius: 16px;
+
+    color: #64748b;
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.10);
+}
+
+
+/* =========================
+   BACK TO EVENTS
+========================= */
+
+body > a {
+    display: inline-block;
+
+    margin: 20px auto 40px;
+
+    padding: 12px 26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #db2777
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 11px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 7px 18px rgba(124, 58, 237, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+body > a:hover {
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(124, 58, 237, 0.35);
+}
+
+
+body > a:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .booking-card {
+        width: 75%;
+
+        padding: 23px;
+    }
+
+    .booking-card h2 {
+        font-size: 21px;
+    }
+
+    .booking-card p {
+        font-size: 15px;
+    }
+}

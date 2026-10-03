@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Smart Event Booking</title>
+    <link rel="stylesheet" href="{% static 'myapp/login.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/navbar.css' %}">
+    <style>
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+
+        background-image: url("{% static 'myapp/images/login.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        min-height: 100vh;
+    }
+</style>
+
+    </head>
+
+<body style="background-color: rgb(30, 255, 0);">
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/events/">Events</a>
+        <a href="/login/">Login</a>
+        <a href="/register/">Register</a>
+    </nav>
+
+    <h1>Login</h1>
+
+{% if error %}
+    <p style="color: red; background: #ffebee; padding: 10px; border-radius: 7px; font-weight: bold;">
+        {{ error }}
+    </p>
+{% endif %}
+
+<p>Login to book and manage your favourite events.</p>
+
+<form method="POST">
+        {% csrf_token %}
+
+        <label>Username:</label>
+        <input type="text" name="username" required>
+
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <br><br>
+
+        <button type="submit">Login</button>
+    </form>
+<script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+
+        let username = document.querySelector('input[name="username"]').value.trim();
+        let password = document.querySelector('input[name="password"]').value.trim();
+
+        if (username === "") {
+            alert("Please enter your username.");
+            event.preventDefault();
+            return;
+        }
+
+        if (password === "") {
+            alert("Please enter your password.");
+            event.preventDefault();
+            return;
+        }
+
+        let confirmLogin = confirm("Do you want to login?");
+
+        if (!confirmLogin) {
+            event.preventDefault();
+        }
+
+    });
+</script>
+</body>
+</html>

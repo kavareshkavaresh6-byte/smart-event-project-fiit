@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events - Smart Event Booking</title>
+    <link rel="stylesheet" href="{% static 'myapp/events.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/navbar.css' %}">
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+
+        background-image: url("{% static 'myapp/images/events.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        min-height: 100vh;
+    }
+</style>
+    
+</head>
+<body >
+    
+
+    
+<nav>
+    <a href="/">Home</a>
+    <a href="/events/">Events</a>
+    <a href="/login/">Login</a>
+    <a href="/register/">Register</a>
+    <a href="/my-bookings/">My Bookings</a>
+    <a href="/logout/">Logout</a>
+</nav>
+    
+
+    <h1>Available Events</h1>
+
+    {% for event in events %}
+
+        <div class="event-card">
+            <h2>{{ event.name }}</h2>
+            <p>{{ event.description }}</p>
+            <p>Date: {{ event.date }}</p>
+            <a href="{% url 'booking' event.id %}">
+    <button>Book Now</button>
+</a>
+        </div>
+
+    {% empty %}
+
+        <p>No events available.</p>
+
+    {% endfor %}
+<script>
+    document.querySelectorAll(".event-card button").forEach(function(button) {
+        button.addEventListener("click", function(event) {
+
+            let confirmBooking = confirm("Do you want to book this event?");
+
+            if (!confirmBooking) {
+                event.preventDefault();
+            }
+
+        });
+    });
+</script>    
+
+</body>
+</html>

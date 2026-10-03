@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookings</title>
+    <link rel="stylesheet" href="{% static 'myapp/mybookings.css' %}">
+        <link rel="stylesheet" href="{% static 'myapp/navbar.css' %}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/events/">Events</a>
+        <a href="/mybookings/">My Bookings</a>
+        <a href="/logout/">Logout</a>
+    </nav>
+
+    <h1>My Bookings</h1>
+
+    {% if bookings %}
+
+        {% for booking in bookings %}
+
+            <div class="booking-card">
+
+                <h2>{{ booking.event.name }}</h2>
+
+                <p>Date: {{ booking.event.date }}</p>
+
+                <p>Name: {{ booking.name }}</p>
+
+                <p>Email: {{ booking.email }}</p>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No bookings found.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/events/">Back to Events</a>
+<script>
+    document.querySelectorAll(".booking-card").forEach(function(card) {
+
+        card.addEventListener("click", function() {
+
+            let eventName = card.querySelector("h2").innerText;
+            let details = card.querySelectorAll("p");
+
+            let date = details[0].innerText;
+            let name = details[1].innerText;
+            let email = details[2].innerText;
+
+            alert(
+                "Booking Details\n\n" +
+                "Event: " + eventName + "\n" +
+                date + "\n" +
+                name + "\n" +
+                email
+            );
+
+        });
+
+    });
+</script>
+</body>
+</html>
